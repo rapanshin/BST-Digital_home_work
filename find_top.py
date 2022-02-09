@@ -6,7 +6,7 @@ def find_top_20(candidates: list) -> list:
     которые станут студентами университета.
     """
     candidate_scores = []
-    top_20 = []
+    top_20_candidate = []
     for candidate in candidates:
         scores_sum = candidate["scores"]["math"] \
                      + candidate["scores"]["russian_language"] \
@@ -17,12 +17,12 @@ def find_top_20(candidates: list) -> list:
     candidate_scores.sort(key=lambda i: i[1], reverse=True)
 
     for candidate_name, candidate_score in candidate_scores:
-        #        top_20.append((len(top_20) + 1, candidate_name, candidate_score))       #строчка для проверки
-        top_20.append(candidate_name)
-        if len(top_20) >= 20:
+        #        top_20_candidate.append((len(top_20) + 1, candidate_name, candidate_score))       #строчка для проверки
+        top_20_candidate.append(candidate_name)
+        if len(top_20_candidate) >= 20:
             break
 
-    return top_20
+    return top_20_candidate
 
 
 candidates = [
